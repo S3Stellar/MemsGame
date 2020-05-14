@@ -11,10 +11,6 @@
         <scene sceneID="mev-x7-sNE">
             <objects>
                 <viewController id="NMA-eD-Zhk" customClass="GameController" customModule="Memory" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hC3-WL-rQn"/>
-                        <viewControllerLayoutGuide type="bottom" id="7IL-uH-rLv"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="USS-cV-8H4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,20 +121,20 @@
                         <color key="backgroundColor" red="0.95675891639999999" green="0.95692259069999996" blue="0.95674854519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="RxW-cl-ZAK" secondAttribute="trailing" constant="10" id="1NT-eZ-126"/>
-                            <constraint firstItem="gru-qn-97v" firstAttribute="top" secondItem="hC3-WL-rQn" secondAttribute="bottom" constant="33" id="32o-fr-v97"/>
-                            <constraint firstItem="7IL-uH-rLv" firstAttribute="top" secondItem="Efx-pn-TGG" secondAttribute="bottom" constant="11" id="5lN-83-0Cr"/>
+                            <constraint firstItem="gru-qn-97v" firstAttribute="top" secondItem="Y0J-Op-g5C" secondAttribute="top" constant="33" id="32o-fr-v97"/>
+                            <constraint firstItem="Y0J-Op-g5C" firstAttribute="bottom" secondItem="Efx-pn-TGG" secondAttribute="bottom" constant="11" id="5lN-83-0Cr"/>
                             <constraint firstItem="Lu2-lE-X1X" firstAttribute="top" secondItem="gru-qn-97v" secondAttribute="bottom" constant="8" id="7WD-7p-0eS"/>
-                            <constraint firstItem="Efx-pn-TGG" firstAttribute="centerX" secondItem="USS-cV-8H4" secondAttribute="centerX" id="LI4-hr-E4L"/>
+                            <constraint firstItem="Efx-pn-TGG" firstAttribute="centerX" secondItem="Y0J-Op-g5C" secondAttribute="centerX" id="LI4-hr-E4L"/>
                             <constraint firstItem="gru-qn-97v" firstAttribute="centerY" secondItem="RxW-cl-ZAK" secondAttribute="centerY" id="RhA-In-FUQ"/>
                             <constraint firstItem="Efx-pn-TGG" firstAttribute="top" secondItem="Lu2-lE-X1X" secondAttribute="bottom" constant="6" id="esE-QC-zct"/>
                             <constraint firstItem="Lu2-lE-X1X" firstAttribute="top" secondItem="RxW-cl-ZAK" secondAttribute="bottom" constant="12" id="gxm-a9-ehF"/>
                             <constraint firstItem="RxW-cl-ZAK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gru-qn-97v" secondAttribute="trailing" constant="8" symbolic="YES" id="nvM-Op-cvc"/>
-                            <constraint firstItem="Efx-pn-TGG" firstAttribute="leading" secondItem="USS-cV-8H4" secondAttribute="leading" constant="133" id="pFe-E2-LUi"/>
+                            <constraint firstItem="Efx-pn-TGG" firstAttribute="leading" secondItem="Y0J-Op-g5C" secondAttribute="leading" constant="133" id="pFe-E2-LUi"/>
                             <constraint firstItem="gru-qn-97v" firstAttribute="leading" secondItem="USS-cV-8H4" secondAttribute="leadingMargin" constant="10" id="qPu-Ue-dk5"/>
-                            <constraint firstItem="Lu2-lE-X1X" firstAttribute="leading" secondItem="USS-cV-8H4" secondAttribute="leading" id="r9T-43-ryy"/>
+                            <constraint firstItem="Lu2-lE-X1X" firstAttribute="leading" secondItem="Y0J-Op-g5C" secondAttribute="leading" id="r9T-43-ryy"/>
                             <constraint firstItem="Efx-pn-TGG" firstAttribute="centerX" secondItem="Lu2-lE-X1X" secondAttribute="centerX" id="rNn-Js-jTa"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="5DS-4w-8pg"/>
+                        <viewLayoutGuide key="safeArea" id="Y0J-Op-g5C"/>
                     </view>
                     <navigationItem key="navigationItem" id="RC3-XS-uPn"/>
                     <connections>
