@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		407BF067246DB0C700B33E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BF066246DB0C700B33E3F /* AppDelegate.swift */; };
 		407BF069246DB0C700B33E3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BF068246DB0C700B33E3F /* SceneDelegate.swift */; };
-		407BF06B246DB0C700B33E3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BF06A246DB0C700B33E3F /* ViewController.swift */; };
 		407BF06E246DB0C700B33E3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407BF06C246DB0C700B33E3F /* Main.storyboard */; };
 		407BF070246DB0C900B33E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 407BF06F246DB0C900B33E3F /* Assets.xcassets */; };
 		407BF073246DB0C900B33E3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407BF071246DB0C900B33E3F /* LaunchScreen.storyboard */; };
+		407BF07B246DB13000B33E3F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BF07A246DB13000B33E3F /* APIClient.swift */; };
+		407BF07E246DB17200B33E3F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BF07D246DB17200B33E3F /* Card.swift */; };
+		407BF080246DB17C00B33E3F /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BF07F246DB17C00B33E3F /* MemoryGame.swift */; };
+		407BF084246DB1A000B33E3F /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BF083246DB1A000B33E3F /* GameController.swift */; };
+		407BF086246DB1AE00B33E3F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BF085246DB1AE00B33E3F /* CardCell.swift */; };
+		407BF088246DB21B00B33E3F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BF087246DB21B00B33E3F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		407BF063246DB0C700B33E3F /* MemsGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemsGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		407BF066246DB0C700B33E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		407BF068246DB0C700B33E3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		407BF06A246DB0C700B33E3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		407BF06D246DB0C700B33E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		407BF06F246DB0C900B33E3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		407BF072246DB0C900B33E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		407BF074246DB0C900B33E3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		407BF07A246DB13000B33E3F /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		407BF07D246DB17200B33E3F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		407BF07F246DB17C00B33E3F /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		407BF083246DB1A000B33E3F /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		407BF085246DB1AE00B33E3F /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		407BF087246DB21B00B33E3F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,44 @@
 		407BF065246DB0C700B33E3F /* MemsGame */ = {
 			isa = PBXGroup;
 			children = (
+				407BF082246DB18E00B33E3F /* Views */,
+				407BF081246DB18300B33E3F /* Controllers */,
+				407BF07C246DB16100B33E3F /* Models */,
 				407BF066246DB0C700B33E3F /* AppDelegate.swift */,
 				407BF068246DB0C700B33E3F /* SceneDelegate.swift */,
-				407BF06A246DB0C700B33E3F /* ViewController.swift */,
-				407BF06C246DB0C700B33E3F /* Main.storyboard */,
 				407BF06F246DB0C900B33E3F /* Assets.xcassets */,
 				407BF071246DB0C900B33E3F /* LaunchScreen.storyboard */,
 				407BF074246DB0C900B33E3F /* Info.plist */,
+				407BF07A246DB13000B33E3F /* APIClient.swift */,
+				407BF087246DB21B00B33E3F /* Constants.swift */,
 			);
 			path = MemsGame;
+			sourceTree = "<group>";
+		};
+		407BF07C246DB16100B33E3F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				407BF07D246DB17200B33E3F /* Card.swift */,
+				407BF07F246DB17C00B33E3F /* MemoryGame.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		407BF081246DB18300B33E3F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				407BF083246DB1A000B33E3F /* GameController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		407BF082246DB18E00B33E3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				407BF06C246DB0C700B33E3F /* Main.storyboard */,
+				407BF085246DB1AE00B33E3F /* CardCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				407BF06B246DB0C700B33E3F /* ViewController.swift in Sources */,
+				407BF080246DB17C00B33E3F /* MemoryGame.swift in Sources */,
 				407BF067246DB0C700B33E3F /* AppDelegate.swift in Sources */,
+				407BF086246DB1AE00B33E3F /* CardCell.swift in Sources */,
+				407BF07E246DB17200B33E3F /* Card.swift in Sources */,
 				407BF069246DB0C700B33E3F /* SceneDelegate.swift in Sources */,
+				407BF07B246DB13000B33E3F /* APIClient.swift in Sources */,
+				407BF084246DB1A000B33E3F /* GameController.swift in Sources */,
+				407BF088246DB21B00B33E3F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
