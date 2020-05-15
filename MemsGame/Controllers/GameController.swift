@@ -3,7 +3,6 @@
 //  Memory
 
 import UIKit
-//import AFNetworking
 
 class GameController: UIViewController {
 
@@ -89,12 +88,14 @@ class GameController: UIViewController {
     
     @objc func timerAction() {
         if numMoves >= 1 {
-            secs += 1
-            if secs > 59 {
-                mins += 1
-                secs = 0
+            if game.isPlaying {
+                secs += 1
+                if secs > 59 {
+                    mins += 1
+                    secs = 0
+                }
+                timer.text = String(format:"%02i:%02i", mins, secs)
             }
-            timer.text = String(format:"%02i:%02i", mins, secs)
         }
     }
 }
@@ -156,7 +157,6 @@ extension GameController: MemoryGameProtocol {
     }
     
     func memoryGameDidEnd(_ game: MemoryGame) {
-        time.invalidate()
         
         let alertController = UIAlertController(
             title: defaultAlertTitle,
@@ -167,6 +167,7 @@ extension GameController: MemoryGameProtocol {
             self?.collectionView.isHidden = true
             self?.movesLabel.isHidden = true
             self?.moves.isHidden = true
+            self?.resetLabels()
         }
         let playAgainAction = UIAlertAction(title: "Of course!", style: .default) { [weak self] (action) in
             self?.collectionView.isHidden = false
@@ -179,7 +180,7 @@ extension GameController: MemoryGameProtocol {
         
         self.present(alertController, animated: true) { }
         
-        resetGame()
+        //resetGame()
     }
 }
 

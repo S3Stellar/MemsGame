@@ -3,7 +3,6 @@
 //  Memory
 
 import UIKit
-//import AFNetworking
 
 class CardCell: UICollectionViewCell {
 

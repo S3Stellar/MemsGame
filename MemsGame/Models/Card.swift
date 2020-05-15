@@ -3,7 +3,6 @@
 //  Memory
 
 import UIKit
-// import SwiftyJSON
 
 class Card {
 

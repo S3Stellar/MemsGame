@@ -3,10 +3,8 @@
 //  Memory
 
 import Foundation
-//import AFNetworking
-//import SwiftyJSON
 import UIKit
-//: AFHTTPSessionManager
+
 typealias CardsArray = [Card]
 
 // MARK: - APIClient
