@@ -1,7 +1,3 @@
-//
-//  MemoryCell.swift
-//  Memory
-
 import UIKit
 
 class CardCell: UICollectionViewCell {
@@ -13,7 +9,7 @@ class CardCell: UICollectionViewCell {
     var card: Card? {
         didSet {
             guard let card = card else { return }
-            frontImageView.image = card.artworkURL
+            frontImageView.image = card.image
             
             frontImageView.layer.cornerRadius = 5.0
             backImageView.layer.cornerRadius = 5.0

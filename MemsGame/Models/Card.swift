@@ -1,7 +1,3 @@
-//
-//  Card.swift
-//  Memory
-
 import UIKit
 
 class Card {
@@ -10,20 +6,20 @@ class Card {
     
     var id: String
     var shown: Bool = false
-    var artworkURL: UIImage!
+    var image: UIImage!
     
     static var allCards = [Card]()
 
     init(card: Card) {
         self.id = card.id
         self.shown = card.shown
-        self.artworkURL = card.artworkURL
+        self.image = card.image
     }
     
     init(image: UIImage) {
         self.id = NSUUID().uuidString
         self.shown = false
-        self.artworkURL = image
+        self.image = image
     }
     
     // MARK: - Methods

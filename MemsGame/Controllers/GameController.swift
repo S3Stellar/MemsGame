@@ -1,7 +1,3 @@
-//
-//  GameController.swift
-//  Memory
-
 import UIKit
 
 class GameController: UIViewController {
@@ -32,7 +28,7 @@ class GameController: UIViewController {
         moves.isHidden = true
         movesLabel.isHidden = true
         
-        APIClient.shared.getCardImages { (cardsArray, error) in
+        ImagesUtility.shared.getCardImages { (cardsArray, error) in
             if let _ = error {
                 // show alert
             }

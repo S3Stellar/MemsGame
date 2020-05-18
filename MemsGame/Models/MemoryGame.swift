@@ -1,7 +1,3 @@
-//
-//  MemoryGame.swift
-//  Memory
-
 import Foundation
 import UIKit
 
@@ -18,7 +14,6 @@ protocol MemoryGameProtocol {
 class MemoryGame {
     
     // MARK: - Properties
-    
     var delegate: MemoryGameProtocol?
     var cards:[Card] = [Card]()
     var cardsShown:[Card] = [Card]()
@@ -59,7 +54,7 @@ class MemoryGame {
         }
         return nil
     }
-
+    
     func didSelectCard(_ card: Card?) {
         if !MemoryGame.areTwoCardShown {
         guard let card = card else { return }
@@ -97,20 +92,11 @@ class MemoryGame {
         isPlaying = false
         delegate?.memoryGameDidEnd(self)
     }
-    
-    /**
-     Indicates if the card selected is unmatched
-     (the first one selected in the current turn).
-     - Returns: An array of shuffled cards.
-     */
+
     fileprivate func unmatchedCardShown() -> Bool {
         return cardsShown.count % 2 != 0
     }
     
-    /**
-     Reads the last element in **cardsShown** array.
-     - Returns: An unmatched card.
-     */
     fileprivate func unmatchedCard() -> Card? {
         let unmatchedCard = cardsShown.last
         return unmatchedCard
@@ -119,7 +105,6 @@ class MemoryGame {
     fileprivate func shuffleCards(cards:[Card]) -> [Card] {
         var randomCards = cards
         randomCards.shuffle()
-        
         return randomCards
     }
 }
