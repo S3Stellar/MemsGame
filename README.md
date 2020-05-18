@@ -1,10 +1,9 @@
 # Mems Game
 
-## The game
+## About
 Simple memory game, where the player has to match to cards with the same picture.
 
-## Code design 
-The game is designed using the MVC design pattern.
+## Game start / End
 
 <div>
       <img src="GamePic/GameStart.jpg" alt="GameStart" >
