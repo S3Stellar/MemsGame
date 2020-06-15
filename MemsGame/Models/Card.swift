@@ -1,7 +1,7 @@
 import UIKit
 
 class Card {
-
+    
     // MARK: - Properties
     
     var id: String
@@ -9,7 +9,7 @@ class Card {
     var image: UIImage!
     
     static var allCards = [Card]()
-
+    
     init(card: Card) {
         self.id = card.id
         self.shown = card.shown

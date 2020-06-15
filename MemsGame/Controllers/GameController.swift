@@ -1,16 +1,22 @@
 import UIKit
 
 class GameController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timer: UILabel!
     @IBOutlet weak var moves: UILabel!
     @IBOutlet weak var movesLabel: UILabel!
-
+    
     var mins = 0
     var secs = 0
     var time = Timer()
     var numMoves = 0
+    var player: Player = Player()
+    var selectedGameMode: String = ""
+    
+    var playerScores = [Player]()
+    var converter: Converter = Converter()
+    let cellReuseIdentifier = "cellView"
     
     fileprivate let sectionInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
     
@@ -21,21 +27,28 @@ class GameController: UIViewController {
         super.viewDidLoad()
         
         game.delegate = self
-        
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.isHidden = true
         moves.isHidden = true
         movesLabel.isHidden = true
         
-        ImagesUtility.shared.getCardImages { (cardsArray, error) in
-            if let _ = error {
-                // show alert
+        if selectedGameMode == "Easy" {
+            ImagesUtility.shared.getCardImagesEasy { (cardsArray, error) in
+                if let _ = error {
+                    // show alert
+                }
+                self.cards = cardsArray!
             }
-            
-            self.cards = cardsArray!
-            self.setupNewGame()
+        } else {
+            ImagesUtility.shared.getCardImagesHard { (cardsArray, error) in
+                if let _ = error {
+                    // show alert
+                }
+                self.cards = cardsArray!
+            }
         }
+        self.setupNewGame()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -152,8 +165,36 @@ extension GameController: MemoryGameProtocol {
         }
     }
     
+    func writeToLocalStorage(playersList: [Player]){
+        let defaults = UserDefaults.standard
+        defaults.set(converter.playerListToJson(playerList: playersList), forKey: "score")
+    }
+    
+    func readFromLocalStorage() -> [Player]{
+        let defaults = UserDefaults.standard
+        if let newList: [Player] = converter.jsonToPlayerList(jsonPlayerList: defaults.string(forKey: "score") ?? ""){
+            return newList
+        }
+        return [Player]()
+    }
+    
+    func updateTableView(newPlayer: Player){
+        var playerListFromStorage = readFromLocalStorage()
+        if playerListFromStorage.count < 10 {
+            playerListFromStorage.append(newPlayer)
+            writeToLocalStorage(playersList: playerListFromStorage.sorted(by: {$0.timeScore < $1.timeScore}))
+        }else if(playerListFromStorage.last!.timeScore > newPlayer.timeScore){
+            playerListFromStorage.remove(at: playerListFromStorage.count - 1)
+            playerListFromStorage.append(newPlayer)
+            writeToLocalStorage(playersList: playerListFromStorage.sorted(by: {$0.timeScore < $1.timeScore}))
+        }
+    }
+    
     func memoryGameDidEnd(_ game: MemoryGame) {
         
+        print(player.location)
+        player.timeScore = (mins * 60)  + secs
+        updateTableView(newPlayer: player)
         let alertController = UIAlertController(
             title: defaultAlertTitle,
             message: defaultAlertMessage,

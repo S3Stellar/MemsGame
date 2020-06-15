@@ -1,7 +1,7 @@
 import UIKit
 
 class CardCell: UICollectionViewCell {
-
+    
     // MARK: - Properties
     @IBOutlet weak var frontImageView: UIImageView!
     @IBOutlet weak var backImageView: UIImageView!
@@ -22,7 +22,7 @@ class CardCell: UICollectionViewCell {
     var shown: Bool = false
     
     // MARK: - Methods
-
+    
     func showCard(_ show: Bool, animted: Bool) {
         frontImageView.isHidden = false
         backImageView.isHidden = false
